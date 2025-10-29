@@ -17,6 +17,7 @@ public class BookingService {
     }
 
     public Optional<Booking> getBookingDetails(long bookingId) {
+
         return Optional.ofNullable(bookings.get(bookingId));
     }
 

@@ -8,7 +8,7 @@ import jakarta.ws.rs.core.MediaType;
 public class TravelAgentResource {
 
     @Inject
-    PackageExpert assistant;
+    PackageExpert expert;
 
     @POST
     @Consumes(MediaType.TEXT_PLAIN)
@@ -17,7 +17,7 @@ public class TravelAgentResource {
         if (userName != null && !userName.isEmpty()) {
             try {
                 SecurityContext.setCurrentUser(userName);
-                return assistant.chat(userName, question); // Usar userName como memoryId
+                return expert.chat(userName, question); // Usar userName como memoryId
             } finally {
                 SecurityContext.clear();
             }
